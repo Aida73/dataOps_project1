@@ -1,0 +1,17 @@
+[2025-04-22T19:21:35.862+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: user_etl_dag.load_users_to_postgres_db manual__2025-04-22T19:15:59.642210+00:00 [queued]>
+[2025-04-22T19:21:35.881+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: user_etl_dag.load_users_to_postgres_db manual__2025-04-22T19:15:59.642210+00:00 [queued]>
+[2025-04-22T19:21:35.883+0000] {taskinstance.py:1359} INFO - Starting attempt 2 of 2
+[2025-04-22T19:21:35.904+0000] {taskinstance.py:1380} INFO - Executing <Task(PythonOperator): load_users_to_postgres_db> on 2025-04-22 19:15:59.642210+00:00
+[2025-04-22T19:21:35.917+0000] {standard_task_runner.py:57} INFO - Started process 211 to run task
+[2025-04-22T19:21:35.923+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'user_etl_dag', 'load_users_to_postgres_db', 'manual__2025-04-22T19:15:59.642210+00:00', '--job-id', '43', '--raw', '--subdir', 'DAGS_FOLDER/user_et_dag.py', '--cfg-path', '/tmp/tmp5jajxuyz']
+[2025-04-22T19:21:35.925+0000] {standard_task_runner.py:85} INFO - Job 43: Subtask load_users_to_postgres_db
+[2025-04-22T19:21:36.092+0000] {task_command.py:415} INFO - Running <TaskInstance: user_etl_dag.load_users_to_postgres_db manual__2025-04-22T19:15:59.642210+00:00 [running]> on host 4a51631e6983
+[2025-04-22T19:21:36.418+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='user_etl_dag' AIRFLOW_CTX_TASK_ID='load_users_to_postgres_db' AIRFLOW_CTX_EXECUTION_DATE='2025-04-22T19:15:59.642210+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-22T19:15:59.642210+00:00'
+[2025-04-22T19:21:58.954+0000] {logging_mixin.py:151} INFO - Used host: postgres
+[2025-04-22T19:21:59.525+0000] {logging_mixin.py:151} INFO - Used port: 5432
+[2025-04-22T19:21:59.906+0000] {logging_mixin.py:151} INFO - Connected to PostgreSQL database:<connection object at 0x7f85c8935180; dsn: 'user=myuser password=xxx dbname=mydb host=postgres port=5432', closed: 0>
+[2025-04-22T19:22:00.232+0000] {logging_mixin.py:151} INFO - Users loaded successfully.
+[2025-04-22T19:22:00.331+0000] {python.py:194} INFO - Done. Returned value was: None
+[2025-04-22T19:22:00.817+0000] {taskinstance.py:1398} INFO - Marking task as SUCCESS. dag_id=user_etl_dag, task_id=load_users_to_postgres_db, execution_date=20250422T191559, start_date=20250422T192135, end_date=20250422T192200
+[2025-04-22T19:22:01.451+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-04-22T19:22:01.618+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check

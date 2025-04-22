@@ -1,0 +1,30 @@
+[2025-04-22T18:29:44.328+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: user_etl_dag.load_users_to_postgres_db manual__2025-04-22T18:23:54.103409+00:00 [queued]>
+[2025-04-22T18:29:44.342+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: user_etl_dag.load_users_to_postgres_db manual__2025-04-22T18:23:54.103409+00:00 [queued]>
+[2025-04-22T18:29:44.344+0000] {taskinstance.py:1359} INFO - Starting attempt 2 of 2
+[2025-04-22T18:29:44.365+0000] {taskinstance.py:1380} INFO - Executing <Task(PythonOperator): load_users_to_postgres_db> on 2025-04-22 18:23:54.103409+00:00
+[2025-04-22T18:29:44.374+0000] {standard_task_runner.py:57} INFO - Started process 1084 to run task
+[2025-04-22T18:29:44.380+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'user_etl_dag', 'load_users_to_postgres_db', 'manual__2025-04-22T18:23:54.103409+00:00', '--job-id', '25', '--raw', '--subdir', 'DAGS_FOLDER/user_et_dag.py', '--cfg-path', '/tmp/tmpeowi1nxs']
+[2025-04-22T18:29:44.382+0000] {standard_task_runner.py:85} INFO - Job 25: Subtask load_users_to_postgres_db
+[2025-04-22T18:29:44.508+0000] {task_command.py:415} INFO - Running <TaskInstance: user_etl_dag.load_users_to_postgres_db manual__2025-04-22T18:23:54.103409+00:00 [running]> on host b5bb6c03d6dd
+[2025-04-22T18:29:44.668+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='user_etl_dag' AIRFLOW_CTX_TASK_ID='load_users_to_postgres_db' AIRFLOW_CTX_EXECUTION_DATE='2025-04-22T18:23:54.103409+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-22T18:23:54.103409+00:00'
+[2025-04-22T18:30:05.345+0000] {logging_mixin.py:151} INFO - Used host: db
+[2025-04-22T18:30:05.351+0000] {logging_mixin.py:151} INFO - Used port: 5433
+[2025-04-22T18:30:05.354+0000] {taskinstance.py:1935} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/user_et_dag.py", line 29, in load_users
+    conn = psycopg2.connect(
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "db" (172.28.0.3), port 5433 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+[2025-04-22T18:30:05.375+0000] {taskinstance.py:1398} INFO - Marking task as FAILED. dag_id=user_etl_dag, task_id=load_users_to_postgres_db, execution_date=20250422T182354, start_date=20250422T182944, end_date=20250422T183005
+[2025-04-22T18:30:05.396+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 25 for task load_users_to_postgres_db (connection to server at "db" (172.28.0.3), port 5433 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+; 1084)
+[2025-04-22T18:30:05.436+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-04-22T18:30:05.469+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check

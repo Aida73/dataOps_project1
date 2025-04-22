@@ -1,0 +1,31 @@
+[2025-04-22T19:16:23.181+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: user_etl_dag.load_users_to_postgres_db manual__2025-04-22T19:15:59.642210+00:00 [queued]>
+[2025-04-22T19:16:23.202+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: user_etl_dag.load_users_to_postgres_db manual__2025-04-22T19:15:59.642210+00:00 [queued]>
+[2025-04-22T19:16:23.204+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 2
+[2025-04-22T19:16:23.229+0000] {taskinstance.py:1380} INFO - Executing <Task(PythonOperator): load_users_to_postgres_db> on 2025-04-22 19:15:59.642210+00:00
+[2025-04-22T19:16:23.238+0000] {standard_task_runner.py:57} INFO - Started process 123 to run task
+[2025-04-22T19:16:23.247+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'user_etl_dag', 'load_users_to_postgres_db', 'manual__2025-04-22T19:15:59.642210+00:00', '--job-id', '40', '--raw', '--subdir', 'DAGS_FOLDER/user_et_dag.py', '--cfg-path', '/tmp/tmplgtnv1a3']
+[2025-04-22T19:16:23.252+0000] {standard_task_runner.py:85} INFO - Job 40: Subtask load_users_to_postgres_db
+[2025-04-22T19:16:23.397+0000] {task_command.py:415} INFO - Running <TaskInstance: user_etl_dag.load_users_to_postgres_db manual__2025-04-22T19:15:59.642210+00:00 [running]> on host 4a51631e6983
+[2025-04-22T19:16:23.655+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='user_etl_dag' AIRFLOW_CTX_TASK_ID='load_users_to_postgres_db' AIRFLOW_CTX_EXECUTION_DATE='2025-04-22T19:15:59.642210+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-22T19:15:59.642210+00:00'
+[2025-04-22T19:16:33.978+0000] {logging_mixin.py:151} INFO - Used host: postgres
+[2025-04-22T19:16:33.983+0000] {logging_mixin.py:151} INFO - Used port: 5432
+[2025-04-22T19:16:34.004+0000] {logging_mixin.py:151} INFO - Connected to PostgreSQL database:<connection object at 0x7f85c8948040; dsn: 'user=myuser password=xxx dbname=mydb host=postgres port=5432', closed: 0>
+[2025-04-22T19:16:34.022+0000] {taskinstance.py:1935} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/user_et_dag.py", line 40, in load_users
+    cur.execute("""
+psycopg2.errors.UndefinedColumn: column "is_active" of relation "users_userprofile" does not exist
+LINE 2: ...rprofile (username, email, first_name, last_name, is_active)
+                                                             ^
+
+[2025-04-22T19:16:34.064+0000] {taskinstance.py:1398} INFO - Marking task as UP_FOR_RETRY. dag_id=user_etl_dag, task_id=load_users_to_postgres_db, execution_date=20250422T191559, start_date=20250422T191623, end_date=20250422T191634
+[2025-04-22T19:16:34.095+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 40 for task load_users_to_postgres_db (column "is_active" of relation "users_userprofile" does not exist
+LINE 2: ...rprofile (username, email, first_name, last_name, is_active)
+                                                             ^
+; 123)
+[2025-04-22T19:16:34.151+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-04-22T19:16:34.199+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check
