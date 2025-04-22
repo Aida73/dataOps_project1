@@ -13,3 +13,5 @@ python mysite/manage.py makemigrations
 python mysite/manage.py migrate
 python manage.py create_admin_account
 python mysite/manage.py runserver 0.0.0.0:8000
+
+exec "$@"
