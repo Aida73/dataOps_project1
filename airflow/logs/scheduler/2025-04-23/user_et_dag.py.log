@@ -1726,3 +1726,25 @@ sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) could not translate
 [2025-04-23T15:07:06.038+0000] {logging_mixin.py:151} INFO - [2025-04-23T15:07:05.428+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/user_et_dag.py
 [2025-04-23T15:07:58.124+0000] {logging_mixin.py:151} INFO - [2025-04-23T15:07:45.642+0000] {timeout.py:68} ERROR - Process timed out, PID: 333
 [2025-04-23T15:09:56.385+0000] {processor.py:157} INFO - Started process (PID=334) to work on /opt/airflow/dags/user_et_dag.py
+[2025-04-23T15:10:04.809+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/user_et_dag.py for tasks to queue
+[2025-04-23T15:10:44.541+0000] {logging_mixin.py:151} INFO - [2025-04-23T15:10:30.982+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/user_et_dag.py
+[2025-04-23T15:11:46.933+0000] {processor.py:157} INFO - Started process (PID=335) to work on /opt/airflow/dags/user_et_dag.py
+[2025-04-23T15:11:47.119+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/user_et_dag.py for tasks to queue
+[2025-04-23T15:11:53.042+0000] {logging_mixin.py:151} INFO - [2025-04-23T15:11:48.914+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/user_et_dag.py
+[2025-04-23T15:12:14.595+0000] {processor.py:839} INFO - DAG(s) dict_keys(['user_etl_dag']) retrieved from /opt/airflow/dags/user_et_dag.py
+[2025-04-23T15:13:22.224+0000] {processor.py:157} INFO - Started process (PID=336) to work on /opt/airflow/dags/user_et_dag.py
+[2025-04-23T15:13:23.477+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/user_et_dag.py for tasks to queue
+[2025-04-23T15:13:26.719+0000] {logging_mixin.py:151} INFO - [2025-04-23T15:13:24.891+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/user_et_dag.py
+[2025-04-23T15:13:49.971+0000] {processor.py:839} INFO - DAG(s) dict_keys(['user_etl_dag']) retrieved from /opt/airflow/dags/user_et_dag.py
+[2025-04-23T15:14:33.026+0000] {processor.py:157} INFO - Started process (PID=343) to work on /opt/airflow/dags/user_et_dag.py
+[2025-04-23T15:14:33.077+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/user_et_dag.py for tasks to queue
+[2025-04-23T15:14:33.202+0000] {logging_mixin.py:151} INFO - [2025-04-23T15:14:33.135+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/user_et_dag.py
+[2025-04-23T15:14:53.588+0000] {processor.py:839} INFO - DAG(s) dict_keys(['user_etl_dag']) retrieved from /opt/airflow/dags/user_et_dag.py
+[2025-04-23T15:16:28.887+0000] {processor.py:157} INFO - Started process (PID=344) to work on /opt/airflow/dags/user_et_dag.py
+[2025-04-23T15:16:28.934+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/user_et_dag.py for tasks to queue
+[2025-04-23T15:16:29.037+0000] {logging_mixin.py:151} INFO - [2025-04-23T15:16:28.993+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/user_et_dag.py
+[2025-04-23T15:17:48.195+0000] {processor.py:839} INFO - DAG(s) dict_keys(['user_etl_dag']) retrieved from /opt/airflow/dags/user_et_dag.py
+[2025-04-23T15:19:16.733+0000] {processor.py:157} INFO - Started process (PID=345) to work on /opt/airflow/dags/user_et_dag.py
+[2025-04-23T15:19:21.547+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/user_et_dag.py for tasks to queue
+[2025-04-23T15:19:32.752+0000] {logging_mixin.py:151} INFO - [2025-04-23T15:19:25.803+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/user_et_dag.py
+[2025-04-23T15:20:49.531+0000] {logging_mixin.py:151} INFO - [2025-04-23T15:20:31.694+0000] {timeout.py:68} ERROR - Process timed out, PID: 345

@@ -28,6 +28,17 @@
 
 ---
 
+## 🔁 Pipeline Flow
+
+```mermaid
+graph TD
+    A[Extract users data from randomuser API] --> B[Upload to Postgres DB]
+    B --> C[Create Django app to visualize these users data]
+    C --> D[ADD CI/CD layer & Kubernates deployment]
+```
+
+---
+
 ## ⚙️ Fonctionnalités
 
 - `GET /users/` : renvoie la liste des utilisateurs depuis la base
